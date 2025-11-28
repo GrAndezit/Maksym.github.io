@@ -4016,7 +4016,7 @@ button:active,
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.7);
 }
 
-/* Task 5 */
+/* Optinal Task 1 */
 /* --- UNORDERED LIST (custom bullets) --- */
 ul.custom-ul {
   list-style: none;
@@ -4100,7 +4100,7 @@ ol.custom-ol li::before {
   line-height: 1;
 }
 
-/* Task 6 */
+/* Optinal Task 2 */
 .table-wrapper {
   margin-top: 1.5rem;
   overflow-x: auto;
