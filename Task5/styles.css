@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #f5f5f5;
+}
+
+.card-outer {
+    padding: 3px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #ff7a7a, #9b5cff, #00c6ff);
+}
+
+.card-inner {
+    width: 420px;
+    max-width: 90vw;
+    border-radius: 22px;
+    background: #ffffff;
+    padding: 24px 24px 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+h1 {
+    text-align: center;
+    margin: 0 0 24px;
+    font-size: 24px;
+}
+
+.add-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.add-row input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid #dddddd;
+    outline: none;
+    font-size: 14px;
+}
+
+.add-row input:focus {
+    border-color: #9b5cff;
+    box-shadow: 0 0 0 2px rgba(155, 92, 255, 0.2);
+}
+
+.add-row button {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #00c853, #00e5ff);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.add-row button:active {
+    transform: translateY(1px);
+}
+
+.todo-list {
+    margin-top: 4px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.todo-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: #aaaaaa;
+}
+
+.delete-btn {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    line-height: 1;
+    padding: 0 4px;
+    cursor: pointer;
+}
