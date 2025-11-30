@@ -193,3 +193,121 @@
   position: relative;
   z-index: 1;
 }
+
+
+
+
+/* Task 3 */
+.php-email-form {
+  display: block;
+  gap: 1.5rem;
+}
+
+.php-email-form .row {
+  margin-bottom: 1rem;
+}
+
+.php-email-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.php-email-form label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.php-email-form input[type="text"],
+.php-email-form input[type="email"],
+.php-email-form input[type="tel"],
+.php-email-form textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.php-email-form input[type="text"]:focus,
+.php-email-form input[type="email"]:focus,
+.php-email-form input[type="tel"]:focus,
+.php-email-form textarea:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.5);
+}
+
+/* Rating sliders */
+.php-email-form input[type="range"] {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.php-email-form .rating-value {
+  font-weight: 600;
+  margin-left: 0.35rem;
+  color: #38bdf8;
+}
+
+/* Output block under the form */
+.form-output {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Task 5 */
+/* Average rating line */
+.average-line {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+/* Color ranges */
+.avg-low {
+  color: #ef4444;   /* red */
+}
+
+.avg-mid {
+  color: #f97316;   /* orange */
+}
+
+.avg-high {
+  color: #22c55e;   /* green */
+}
+
+/* Task 7 */
+/* =========================================================
+   SUCCESS POPUP (appears after successful submission)
+   ========================================================= */
+
+.success-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  padding: 1rem 1.4rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 99999;
+}
+
+.success-popup.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}

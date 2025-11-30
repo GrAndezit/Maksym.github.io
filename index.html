@@ -924,15 +924,14 @@
         <h3 class="text-center mb-4">My media elements</h3>
         <div class="row">
           <div class="col-lg-4 col-lg-6 mb-4">
-            <iframe width="100%" height="300" 
+            <iframe class="media-embed" height="300" 
               src="https://www.youtube.com/embed/78KmNGFylns"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
           </div>
 
           <div class="col-lg-4 col-lg-6 mb-4">
-            <video width="100%" height="300" controls>
+            <video class="media-embed" height="300" controls>
               <source src="assets/media/video.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -944,6 +943,8 @@
               Your browser does not support the audio element.
             </audio>
           </div>
+        </div>
+
         <div class="row g-5">
 
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
@@ -1013,8 +1014,7 @@
         </div>
 
       </div>
-
-    </section><!-- /Services Section -->
+    </section>
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
@@ -1223,26 +1223,60 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Full Name</label>
-                      <input type="text" name="name" required="">
+                      <label for="firstName">Name</label>
+                      <input type="text" name="first_name" id="firstName" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label>Email Address</label>
-                      <input type="email" name="email" required="">
+                      <label for="lastName">Surname</label>
+                      <input type="text" name="last_name" id="lastName" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="emailAddress">Email</label>
+                      <input type="email" name="email" id="emailAddress" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phoneNumber">Phone number</label>
+                      <input type="tel" name="phone" id="phoneNumber" required>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label>Subject</label>
-                  <input type="text" name="subject" required="">
+                  <label for="addressField">Address</label>
+                  <input type="text" name="address" id="addressField" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="projectMessage">Message</label>
-                  <textarea name="message" id="projectMessage" rows="5" required=""></textarea>
+                  <label for="ratingProject">
+                    How clear is your project idea? (1-10)
+                    <span id="ratingProjectValue" class="rating-value">5</span>
+                  </label>
+                  <input type="range" name="rating_project" id="ratingProject" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                  <label for="ratingTimeline">
+                    How urgent is your timeline? (1-10)
+                    <span id="ratingTimelineValue" class="rating-value"></span>
+                  </label>
+                  <input type="range" name="rating_timeline" id="ratingTimeline" min="1" max="10" value="1">
+                </div>
+
+                <div class="form-group">
+                  <label for="ratingBudget">
+                    How prepared is your budget? (1-10)
+                    <span id="ratingBudgetValue" class="rating-value"></span>
+                  </label>
+                  <input type="range" name="rating_budget" id="ratingBudget" min="1" max="10" value="1">
                 </div>
 
                 <div class="my-3">
@@ -1257,7 +1291,8 @@
                 </button>
 
               </form>
-
+              <div id="form-output" class="form-output"></div>
+              <div id="success-popup" class="success-popup">Form submitted successfully!</div>
             </div>
 
           </div>
@@ -1315,6 +1350,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
