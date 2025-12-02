@@ -1,0 +1,210 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+}
+
+.app {
+  display: flex;
+  gap: 32px;
+  padding: 24px;
+}
+
+.sidebar {
+  max-width: 380px;
+}
+
+.controls {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.preview h2 {
+  margin-top: 0;
+}
+
+.postcard {
+  width: 600px;
+  height: 380px;
+  background: #fff;
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.16);
+  overflow: hidden;
+}
+
+.border-side {
+  position: absolute;
+  background-image: repeating-linear-gradient(
+    45deg,
+    red 0 12px,
+    white 12px 24px
+  );
+  pointer-events: none;
+}
+
+.border-top, .border-bottom {
+  left: 0;
+  right: 0;
+  height: 18px;
+}
+
+.border-top { top: 0; }
+.border-bottom { bottom: 0; }
+
+.border-left, .border-right {
+  top: 0;
+  bottom: 0;
+  width: 18px;
+}
+
+.border-left { left: 0; }
+.border-right { right: 0; }
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  background-image:
+    radial-gradient(circle at 15% 25%, #ff5252 0 3px, transparent 3px),
+    radial-gradient(circle at 40% 20%, #ab47bc 0 3px, transparent 3px),
+    radial-gradient(circle at 65% 35%, #29b6f6 0 3px, transparent 3px),
+    radial-gradient(circle at 80% 55%, #66bb6a 0 3px, transparent 3px),
+    radial-gradient(circle at 30% 70%, #ffca28 0 3px, transparent 3px);
+}
+
+.confetti-layer.show {
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-5px); }
+}
+
+.main-image {
+  max-width: 190px;
+}
+
+.decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+.s1 {
+  bottom: 18px;
+  right: 37px;
+  width: 130px;
+}
+
+.s2 {
+  bottom: 10px;
+  right: 110px;
+  width: 140px;
+}
+
+.s3 {
+  bottom: 92px;
+  right: 70px;
+  width: 90px;
+}
+
+.postmark {
+  top: 16px;
+  right: 90px;
+  width: 90px;
+  opacity: 0.7;
+}
+
+.t2 {
+  bottom: 24px;
+  left: 40px;
+  width: 90px;
+}
+
+.t1 {
+  bottom: 24px;
+  left: 130px;
+  width: 80px;
+}
+
+.snowflake {
+  top: 26px;
+  left: 32px;
+  width: 70px;
+}
+
+.ornament {
+  top: 18px;
+  right: 18px;
+  width: 140px;
+}
+
+/* LAYOUTS */
+.postcard-layout {
+  display: none;
+  height: 100%;
+}
+
+#layout1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+#layout1 p {
+  margin-top: -120px;
+  margin-left: 200px;
+}
+
+.layout2-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 30px;
+}
+
+.layout2-container img {
+  margin-right: 120px;
+  margin-top: -40px;
+}
+
+.layout2-container p {
+  max-width: 55%;
+  font-size: 26px;
+}
+
+.layout3-container {
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  padding: 20px 30px;
+}
+
+.layout3-container img {
+  margin-right: 30px;
+}
+
+.layout3-container p {
+  margin-top: 200px;
+  margin-left: -100x;
+  max-width: 55%;
+}
+
+#postcardMessage,
+#postcardMessage2,
+#postcardMessage3 {
+  font-family: serif;
+  font-size: 26px;
+  color: #d32f2f;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Christmas Postcard Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="sidebar">
+      <h1>Christmas Postcard Generator</h1>
+
+      <div class="controls">
+        <div class="section">
+          <h3>Border</h3>
+          <select id="borderOption">
+            <option value="all">All sides</option>
+            <option value="topbottom">Top & bottom</option>
+            <option value="leftright">Left & right</option>
+            <option value="none">None</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <h3>Christmas image</h3>
+          <select id="imageOption">
+            <option value="tree1.png">Tree 1</option>
+            <option value="tree2.png">Tree 2</option>
+            <option value="bauble.png">Bauble</option>
+            <option value="snowflake.png">Snowflake</option>
+            <option value="santa.png">Santa</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <h3>Layout</h3>
+          <select id="layoutOption">
+            <option value="layout1">Layout 1 (centered)</option>
+            <option value="layout2">Layout 2 (text left, image right)</option>
+            <option value="layout3">Layout 3 (image left, text right & down)</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <h3>Font family</h3>
+          <select id="fontOption">
+            <option value="serif">Serif</option>
+            <option value="cursive">Cursive</option>
+            <option value="sans-serif">Sans Serif</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <h3>Text color</h3>
+          <select id="colorOption">
+            <option value="#d32f2f">Red</option>
+            <option value="#1e88e5">Blue</option>
+            <option value="#2e7d32">Green</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <h3>Your text</h3>
+          <textarea id="postcardText" placeholder="Write your greeting..."></textarea>
+        </div>
+
+        <div class="section">
+          <label>
+            <input type="checkbox" id="confettiToggle" checked>
+            Show confetti
+          </label>
+        </div>
+
+        <button id="downloadBtn">Download postcard</button>
+      </div>
+    </div>
+
+    <div class="preview">
+      <h2>Preview</h2>
+
+      <div class="postcard" id="postcard">
+        <div class="border-side border-top"></div>
+        <div class="border-side border-bottom"></div>
+        <div class="border-side border-left"></div>
+        <div class="border-side border-right"></div>
+
+        <div class="confetti-layer" id="confettiLayer"></div>
+
+        <img src="images/decorations/stamp2.png" class="decor stamp s2" alt="">
+        <img src="images/decorations/stamp1.png" class="decor stamp s1" alt="">
+        <img src="images/decorations/stamp3.png" class="decor stamp s3" alt="">
+
+        <img src="images/decorations/postmark.png" class="decor postmark" alt="">
+
+        <img src="images/decorations/tree1.png" class="decor tree t1" alt="">
+        <img src="images/decorations/tree2.png" class="decor tree t2" alt="">
+
+        <img src="images/decorations/snowflake.png" class="decor snowflake" alt="">
+
+        <img src="images/decorations/ornament.png" class="decor ornament" alt="">
+
+        <div class="postcard-layout" id="layout1">
+          <img id="postcardImage" class="main-image" src="images/tree1.png" alt="">
+          <p id="postcardMessage">Merry Christmas!</p>
+        </div>
+
+        <div class="postcard-layout" id="layout2">
+          <div class="layout2-container">
+            <p id="postcardMessage2">Merry Christmas!</p>
+            <img id="postcardImage2" class="main-image" src="images/tree1.png" alt="">
+          </div>
+        </div>
+
+        <div class="postcard-layout" id="layout3">
+          <div class="layout3-container">
+            <img id="postcardImage3" class="main-image" src="images/tree1.png" alt="">
+            <p id="postcardMessage3">Merry Christmas!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
