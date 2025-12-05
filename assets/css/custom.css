@@ -341,3 +341,242 @@
   cursor: not-allowed !important;
   pointer-events: none;
 }
+
+/* =========================================================
+   MEMORY GAME – LAYOUT & STYLING
+   ========================================================= */
+
+.memory-game-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.memory-controls {
+  flex: 1 1 260px;
+  max-width: 320px;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.memory-control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.memory-control-row label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#memory-difficulty {
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.memory-stats {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.memory-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.memory-win-message {
+  min-height: 1.6rem;
+  font-weight: 600;
+  color: #22c55e;
+  font-size: 0.95rem;
+}
+
+/* Board layout */
+.memory-board-wrapper {
+  flex: 2 1 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.memory-board {
+  display: grid;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+/* Easy: 4 x 3 grid */
+.memory-board-easy {
+  grid-template-columns: repeat(4, minmax(70px, 110px));
+}
+
+/* Hard: 6 x 4 grid */
+.memory-board-hard {
+  grid-template-columns: repeat(6, minmax(60px, 95px));
+}
+
+/* Card base styles */
+.memory-card {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  perspective: 800px;
+  cursor: pointer;
+}
+
+.memory-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0.9rem;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  background: radial-gradient(circle at 10% 0%, #1e293b, #020617);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+}
+
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-face {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Back side (hidden content) */
+.memory-card-back {
+  transform: rotateY(180deg);
+  background: radial-gradient(circle at 10% 0%, #22c55e, #0ea5e9);
+  color: #e5f7ff;
+  font-size: 2rem;
+}
+
+/* Front side (card back design) */
+.memory-card-front {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: rgba(148, 163, 184, 0.65);
+  font-size: 1.5rem;
+}
+
+.memory-card.matched .memory-card-inner {
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.9);
+}
+
+.memory-card.matched {
+  cursor: default;
+}
+
+/* Icon alignment */
+.memory-card-back i {
+  font-size: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .memory-game-layout {
+    flex-direction: column;
+  }
+
+  .memory-controls {
+    max-width: 100%;
+  }
+}
+
+.memory-stats {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.memory-bests {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.memory-bests span {
+  color: #facc15;
+  font-weight: 600;
+}
+
+/* ===== Bulb switch with images ===== */
+
+.bulb-control {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bulb-image {
+  width: 48px;
+  height: auto;
+}
+
+/* Switch styling */
+.bulb-switch {
+  position: relative;
+  width: 46px;
+  height: 24px;
+  display: inline-block;
+}
+
+.bulb-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.bulb-slider {
+  position: absolute;
+  inset: 0;
+  background: #4b5563;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.bulb-slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+/* ON state */
+.bulb-switch input:checked + .bulb-slider {
+  background: #22c55e;
+}
+
+.bulb-switch input:checked + .bulb-slider::before {
+  transform: translateX(20px);
+}
+
+.bulb-text {
+  font-size: 1rem;
+  min-width: 70px;
+}

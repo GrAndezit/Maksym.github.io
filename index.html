@@ -1154,6 +1154,65 @@
 
     </section><!-- /Testimonials Section -->
 
+        <!-- Memory Game Section -->
+    <section id="memory-game" class="memory-game section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Memory Game</h2>
+          <p>Test your memory by matching pairs of icons.</p>
+        </div>
+
+        <div class="memory-game-layout">
+          <!-- Controls + Stats -->
+          <div class="memory-controls">
+            <div class="memory-control-row">
+              <label for="memory-difficulty">Difficulty</label>
+              <select id="memory-difficulty">
+                <option value="easy">Easy (4x3)</option>
+                <option value="hard">Hard (6x4)</option>
+              </select>
+            </div>
+
+            <div class="memory-stats">
+              <div>Moves: <span id="memory-moves">0</span></div>
+              <div>Matches: <span id="memory-matches">0</span></div>
+              <div>Time: <span id="memory-timer">0:00</span></div>
+              <div class="memory-bests">
+                <div>Best (Easy): <span id="memory-best-easy">-</span></div>
+                <div>Best (Hard): <span id="memory-best-hard">-</span></div>
+              </div>
+            </div>
+
+            <div class="memory-buttons">
+              <button id="memory-start" class="btn btn-primary">Start</button>
+              <button id="memory-restart" class="btn btn-secondary" disabled>Restart</button>
+            </div>
+
+            <div id="memory-win-message" class="memory-win-message"></div>
+          </div>
+
+          <!-- Game Board -->
+          <div class="memory-board-wrapper">
+            <div id="memory-board" class="memory-board memory-board-easy">
+              <!-- Cards will be created here by JavaScript -->
+            </div>
+          </div>
+          <div class="bulb-control">
+            <img id="bulb-image" class="bulb-image" src="assets/img/bulb-off.png" alt="Light Off">
+            
+            <span id="bulb-text" class="bulb-text">Bulb Off</span>
+
+            <label class="bulb-switch">
+              <input type="checkbox" id="bulb-toggle">
+              <span class="bulb-slider"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Memory Game Section -->
+
+
     <!-- Contact Section -->
     <section id="contact" class="contact section">
       <!-- Section Title -->
